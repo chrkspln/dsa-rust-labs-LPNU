@@ -11,8 +11,8 @@ fn find_second_largest_negative(array: &[f64]) -> Option<f64> {
 }
 
 fn calculate_fourth_powers_sum(array: &[f64], elem1: f64, elem2: f64) -> f64 {
-    let index1 = array.iter().position(|&x| x == elem1).expect("Елемент 1 не знайдено.");
-    let index2 = array.iter().position(|&x| x == elem2).expect("Елемент 2 не знайдено.");
+    let index1 = array.iter().position(|&x| x == elem1).expect("");
+    let index2 = array.iter().position(|&x| x == elem2).expect("");
 
     let (start, end) = if index1 < index2 {
         (index1 + 1, index2)
@@ -27,13 +27,13 @@ fn calculate_fourth_powers_sum(array: &[f64], elem1: f64, elem2: f64) -> f64 {
 }
 
 pub fn lab2 (array: &[f64]) -> () {
-    let second_smallest_positive = find_second_smallest_positive(array).expect("Не знайдено другий найменший додатний елемент.");
-    let second_largest_negative = find_second_largest_negative(array).expect("Не знайдено другий найбільший від'ємний елемент.");
+    let second_smallest_positive = find_second_smallest_positive(array).expect("");
+    let second_largest_negative = find_second_largest_negative(array).expect("");
     let sum = calculate_fourth_powers_sum(array, second_smallest_positive, second_largest_negative);
 
     println!("Лабораторна робота 2: Rust. Робота із масивами.");
     println!("Масив: {:?}", array);
-    println!("Другий найменший додатний: {}", second_smallest_positive);
-    println!("Другий найбільший від'ємний: {}", second_largest_negative);
-    println!("Сума четвертих степенів: {:.4}", sum);
+    println!("Другий найменший додатний елемент: {}", second_smallest_positive);
+    println!("Другий найбільший від'ємний елемент: {}", second_largest_negative);
+    println!("Сума четвертих степенів елементів: {:.4}", sum);
 }
